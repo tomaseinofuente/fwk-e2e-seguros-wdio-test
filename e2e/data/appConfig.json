@@ -1,0 +1,63 @@
+{
+    "qa": {
+        "usersYape": [
+            {
+                "username": "fernandotdd@mailinator.com",
+                "password": "999999",
+                "phone": "943014487",
+                "idc": "434222731"
+            }
+            
+        ],
+        "redis": [
+            {
+                "host": "redieu2yaped11.redis.cache.windows.net",
+                "password": "SbMWbpGlZR87hiKHgH3GDkCkpqJN77zc5AzCaHx2Umk=",
+                "port": 6380,
+                "ssl": true
+            }
+        ],
+        "apisPersonality": [
+            {
+                "host": "http://20.88.112.251:4567",
+                "endPointPersonality": "/yape/ChangeUserPersonality"
+            }
+        ],
+        "app": [
+            {
+                "pathApk": "",
+                "pathIpa": ""
+            }
+        ]
+    },
+    "stg": {
+        "usersYape": [
+            {
+                "username": "fernandotdd@mailinator.com",
+                "password": "999999",
+                "phone": "943014487",
+                "idc": "434222731"
+            }
+        ],
+        "redis": [
+            {
+                "host": "redieu2yapec13.redis.cache.windows.net",
+                "password": "QxDZnvfckm0lVGLFRlC1JJ0vUndHuqorqAzCaFSt5Zc=",
+                "port": 6380,
+                "ssl": true
+            }
+        ],
+        "apisPersonality": [
+            {
+                "host": "http://20.88.112.245:4567",
+                "endPointPersonality": "/yape/ChangeUserPersonality"
+            }
+        ],
+        "app": [
+            {
+                "pathApk": "/app/android/stg/app-stg-release.apk",
+                "pathIpa": ""
+            }
+        ]
+    }
+}
