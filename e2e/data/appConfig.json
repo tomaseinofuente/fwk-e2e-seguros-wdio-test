@@ -2,10 +2,10 @@
     "qa": {
         "usersYape": [
             {
-                "username": "fernandotdd@mailinator.com",
+                "username": "correo",
                 "password": "999999",
-                "phone": "943014487",
-                "idc": "434222731"
+                "phone": "numerotelefono",
+                "idc": "idc"
             }
             
         ],
@@ -25,19 +25,22 @@
         ],
         "app": [
             {
-                "pathApk": "",
-                "pathIpa": ""
+                "pathApk": "/app/android/qa/app-qa-debug_3_30_local.apk",
+                "pathIpa": "/app/ios/qa/Yape_3_30_local.ipa"
             }
         ]
     },
     "stg": {
         "usersYape": [
             {
-                "username": "fernandotdd@mailinator.com",
+                "username": "correo",
                 "password": "999999",
-                "phone": "943014487",
-                "idc": "434222731"
+                "phone": "numerotelefono",
+                "idc": "idc"
             }
+            
+            
+            
         ],
         "redis": [
             {
@@ -54,9 +57,9 @@
             }
         ],
         "app": [
-            {
-                "pathApk": "/app/android/stg/app-stg-release.apk",
-                "pathIpa": ""
+            {  
+                "pathApk": "/app/android/stg/app-stg-_ronald_3_30_2.apk",
+                "pathIpa": "/app/ios/stg/Yape_ronald_3_30_2_STG.ipa"
             }
         ]
     }

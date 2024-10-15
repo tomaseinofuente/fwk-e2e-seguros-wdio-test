@@ -35,22 +35,22 @@ class RedisHelper {
         return client
     }
 
-    public async readDataRedis(clave: string, cont: number): Promise<string> {
+    public async readDataRedis(key:string, textSearch: string, cont: number): Promise<string> {
         let client = this.openConnectionRedis()
         let arrayContenido: string[] = [];
         let otp = "";
         client.on('error', (err) => console.log('Redis Client Error', err));
         await client.connect();
         //Obtiene los datos de la base de datos Redis a partir de la clave yapeappotp_login: con el comodin *
-        const listYapeappotpLogin = await client.keys("yapeappotp_login:*");
+        const listYapeappotpLogin = await client.keys(key);
 
         if (listYapeappotpLogin) {
             console.log(listYapeappotpLogin);
             for (let i = 0; i < listYapeappotpLogin.length; i++) {
-                let clave = listYapeappotpLogin[i];
-                console.log(clave);
-                console.log(await client.get(clave));
-                const valor = await client.get(clave);
+                let txtClave = listYapeappotpLogin[i];
+                console.log(txtClave);
+                console.log(await client.get(txtClave));
+                const valor = await client.get(txtClave);
                 console.log(valor);
                 if (valor !== null) {
                     arrayContenido.push(valor);
@@ -59,22 +59,22 @@ class RedisHelper {
 
             }
             console.log(arrayContenido)
-            otp = await this.getValueForKey(arrayContenido, clave);
+            otp = await this.getValueForKey(arrayContenido, textSearch);
             console.log("otp");
             console.log(otp);
             if (otp === "" && cont < 5) {
                 await setTimeout(3000);
                 cont++;
-                await this.readDataRedis(clave, cont);
+                await this.readDataRedis(key, textSearch, cont);
 
             }
         }
         else {
-            console.log("no esxiste la clave: " + clave)
+            console.log("no esxiste la clave: " + textSearch)
             if (otp === "" && cont < 5) {
                 await setTimeout(3000);
                 cont++;
-                await this.readDataRedis(clave, cont);
+                await this.readDataRedis(key, textSearch, cont);
 
             }
         }

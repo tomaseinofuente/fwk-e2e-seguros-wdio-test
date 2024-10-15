@@ -2,7 +2,7 @@
     "compilerOptions": {
         "moduleResolution": "node",
         "module": "ESNext",
-        "target": "es2022",
+        "target": "ES2021",
         "lib": [
             "es2022",
             "dom"
@@ -26,6 +26,8 @@
     },
     "include": [
         "test",
-        "wdio.conf.ts"
+        "config/wdio.conf.ts",
+        "config/wdio.android.conf.ts",
+        "config/wdio.ios.conf.ts",
     ]
 }
